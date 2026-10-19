@@ -3,10 +3,16 @@
 
 package types
 
-type Request struct {
-	Name string `path:"name,options=you|me"`
+type InfoRes struct {
+	UserName string `json:"user_name"`
+	Role     string `json:"role"`
 }
 
-type Response struct {
-	Message string `json:"message"`
+type LoginReq struct {
+	UserName string `json:"user_name"`
+	PassWord string `json:"pass_word"`
+}
+
+type LoginRes struct {
+	Role string `json:"role"`
 }

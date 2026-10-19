@@ -1,0 +1,33 @@
+syntax = "v1"
+
+type LoginReq {
+	UserName string `json:"user_name"`
+	PassWord string `json:"pass_word"`
+}
+
+type LoginRes {
+	Role string `json:"role"`
+}
+
+type InfoRes {
+	UserName string `json:"user_name"`
+	Role     string `json:"role"`
+}
+
+@server (
+	prefix: /api/v1/user
+)
+service admin {
+	@handler Login
+	post /login (LoginReq) returns (LoginRes)
+}
+
+@server (
+	prefix: /api/v1/user
+	jwt:    Auth
+)
+service admin {
+	@handler Info
+	get /info returns (InfoRes)
+}
+
