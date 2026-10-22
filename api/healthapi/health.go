@@ -1,5 +1,5 @@
 // Code scaffolded by goctl. Safe to edit.
-// goctl 1.9.2
+// goctl 1.10.2
 
 package main
 
@@ -7,15 +7,15 @@ import (
 	"flag"
 	"fmt"
 
-	"api/internal/config"
-	"api/internal/handler"
-	"api/internal/svc"
+	"healthapi/internal/config"
+	"healthapi/internal/handler"
+	"healthapi/internal/svc"
 
 	"github.com/zeromicro/go-zero/core/conf"
 	"github.com/zeromicro/go-zero/rest"
 )
 
-var configFile = flag.String("f", "etc/admin.yaml", "the config file")
+var configFile = flag.String("f", "etc/health-api.yaml", "the config file")
 
 func main() {
 	flag.Parse()

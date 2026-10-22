@@ -1,6 +1,0 @@
-Name: admin
-Host: 0.0.0.0
-Port: 8888
-Auth:
-  AccessSecret: mifesxf20070401
-  AccessExpire: 86400

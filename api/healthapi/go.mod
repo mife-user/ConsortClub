@@ -1,4 +1,4 @@
-module api
+module healthapi
 
 go 1.27.1
 

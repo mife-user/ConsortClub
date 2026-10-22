@@ -1,0 +1,22 @@
+syntax = "v1"
+
+info (
+	title:  "health"
+	desc:   "to check the health of machine"
+	author: "mife"
+	email:  "15723556393@163.com"
+)
+
+type Healthreq {
+	Id uint `path:"id"`
+}
+
+type Healthres {
+	Code uint `json:"code"`
+}
+
+service health-api {
+	@handler Health
+	get /health/:id (Healthreq) returns (Healthres)
+}
+

@@ -1,36 +1,33 @@
 // Code scaffolded by goctl. Safe to edit.
-// goctl 1.9.2
+// goctl 1.10.2
 
 package logic
 
 import (
 	"context"
 
-	"api/internal/svc"
-	"api/internal/types"
+	"healthapi/internal/svc"
+	"healthapi/internal/types"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
 
-type InfoLogic struct {
+type HealthLogic struct {
 	logx.Logger
 	ctx    context.Context
 	svcCtx *svc.ServiceContext
 }
 
-func NewInfoLogic(ctx context.Context, svcCtx *svc.ServiceContext) *InfoLogic {
-	return &InfoLogic{
+func NewHealthLogic(ctx context.Context, svcCtx *svc.ServiceContext) *HealthLogic {
+	return &HealthLogic{
 		Logger: logx.WithContext(ctx),
 		ctx:    ctx,
 		svcCtx: svcCtx,
 	}
 }
 
-func (l *InfoLogic) Info() (resp *types.InfoRes, err error) {
+func (l *HealthLogic) Health(req *types.Healthreq) (resp *types.Healthres, err error) {
 	// todo: add your logic here and delete this line
-	resp = &types.InfoRes{
-		UserName: "xxx",
-		Role:     "yyy",
-	}
+
 	return
 }

@@ -1,5 +1,12 @@
 syntax = "v1"
 
+info (
+	title:  "user"
+	desc:   "to set and get the info of user"
+	author: "mife"
+	email:  "15723556393@163.com"
+)
+
 type LoginReq {
 	UserName string `json:"user_name"`
 	PassWord string `json:"pass_word"`
@@ -14,12 +21,23 @@ type InfoRes {
 	Role     string `json:"role"`
 }
 
+type Healthreq {
+	Id uint `path:"id"`
+}
+
+type Healthres {
+	Msg string `json:"msg"`
+}
+
 @server (
 	prefix: /api/v1/user
 )
 service admin {
 	@handler Login
 	post /login (LoginReq) returns (LoginRes)
+
+	@handler Ping
+	get /:id (Healthreq) returns (Healthres)
 }
 
 @server (
