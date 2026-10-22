@@ -6,13 +6,14 @@ package handler
 import (
 	"net/http"
 
-	"github.com/zeromicro/go-zero/rest/httpx"
 	"healthapi/internal/logic"
 	"healthapi/internal/svc"
 	"healthapi/internal/types"
+
+	"github.com/zeromicro/go-zero/rest/httpx"
 )
 
-func healthHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
+func HealthHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		var req types.Healthreq
 		if err := httpx.Parse(r, &req); err != nil {
