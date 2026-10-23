@@ -4,3 +4,7 @@ Etcd:
   Hosts:
   - 127.0.0.1:2379
   Key: user.rpc
+DataSource: root:114514@tcp(127.0.0.1:3306)/consort_club?charset=utf8mb4&parseTime=true&loc=Local
+Cache:
+  - Host: "127.0.0.1:6379"
+    Pass: "114514"

@@ -22,5 +22,5 @@ type LoginReq struct {
 }
 
 type LoginRes struct {
-	Role string `json:"role"`
+	Msg string `json:"msg"`
 }

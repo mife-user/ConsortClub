@@ -13,7 +13,7 @@ type LoginReq {
 }
 
 type LoginRes {
-	Role string `json:"role"`
+	Msg string `json:"msg"`
 }
 
 type InfoRes {

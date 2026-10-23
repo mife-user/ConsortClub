@@ -11,6 +11,25 @@ message Response {
   string pong = 1;
 }
 
+message LoginReq {
+  string name = 1;
+  string password = 2;
+}
+
+message LoginRes {
+  string msg = 1;
+}
+
+message InfoReq {
+  uint32 id = 1;
+}
+
+message InfoRes {
+  string name = 1;
+  string descript = 2;
+}
 service User {
   rpc Ping(Request) returns(Response);
+  rpc Login(LoginReq) returns(LoginRes);
+  rpc Info(InfoReq) returns(InfoRes);
 }
